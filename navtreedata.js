@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "Unity Event Manager", "index.html", [
+  [ "Object Pool", "index.html", [
     [ "Unity Package Template", "index.html", [
       [ "Setup", "index.html#autotoc_md1", null ],
       [ "Documentation Generation", "index.html#autotoc_md2", null ]
