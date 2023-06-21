@@ -39,7 +39,7 @@ public class ObjectPoolExample : MonoBehaviour
 
     private void CheckoutObjects()
     {
-        // Checks out some objects from the object pool.
+        // Check out some objects from the object pool.
         for (int i = 0; i < 10; i++)
         {
             var obj = PoolHandle.GetObject(transform);
@@ -49,7 +49,7 @@ public class ObjectPoolExample : MonoBehaviour
 
     private void ReturnObjects()
     {
-        // Returns any objects stored in the GameObjects list.
+        // Return any objects stored in the GameObjects list.
         foreach (var obj in GameObjects)
         {
             PoolHandle.ReturnObject(obj);
