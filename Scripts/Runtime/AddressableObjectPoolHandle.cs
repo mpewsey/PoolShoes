@@ -41,5 +41,10 @@ namespace MPewsey.ObjectPool
 
             Object.Destroy(obj);
         }
+
+        public bool IsValid()
+        {
+            return Pools != null && Prefab != null && Prefab.RuntimeKeyIsValid();
+        }
     }
 }

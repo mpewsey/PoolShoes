@@ -135,6 +135,9 @@ namespace MPewsey.ObjectPool
 
         public static AddressableObjectPool Create(AssetReferenceGameObject prefab, int initialCapacity = 0)
         {
+            if (!prefab.RuntimeKeyIsValid())
+                throw new System.ArgumentException($"Prefab runtime key is not valid: {prefab}.");
+
             var obj = new GameObject("Addressable Object Pool");
             obj.SetActive(false);
             DontDestroyOnLoad(obj);
