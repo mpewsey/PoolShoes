@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unity_20package_20template_0',['Unity Package Template',['../index.html',1,'']]]
+  ['object_20pool_0',['Object Pool',['../index.html',1,'']]]
 ];

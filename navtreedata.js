@@ -25,10 +25,8 @@
 var NAVTREE =
 [
   [ "Object Pool", "index.html", [
-    [ "Unity Package Template", "index.html", [
-      [ "Setup", "index.html#autotoc_md1", null ],
-      [ "Documentation Generation", "index.html#autotoc_md2", null ]
-    ] ],
+    [ "Installation", "index.html#autotoc_md1", null ],
+    [ "Example Usage", "index.html#autotoc_md2", null ],
     [ "Packages", "namespaces.html", [
       [ "Packages", "namespaces.html", "namespaces_dup" ]
     ] ],

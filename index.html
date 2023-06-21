@@ -11,7 +11,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Object Pool: Unity Package Template</title>
+<title>Object Pool: Object Pool</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -96,34 +96,57 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">Unity Package Template </div></div>
+  <div class="headertitle"><div class="title">Object Pool </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p ><a class="anchor" id="md__github_workspace_README"></a> A repository template for Unity packages.</p>
+<div class="textblock"><p ><a class="anchor" id="md__github_workspace_README"></a> An object pool for addressable objects in Unity.</p>
 <h1><a class="anchor" id="autotoc_md1"></a>
-Setup</h1>
-<ul>
-<li>Fork this repository and use it as a template when creating a new repository.</li>
-<li>Create a blank Unity project, then clone your repository under its <code>Packages</code> directory.</li>
-<li>The package will display under <code>Packages</code> in the Unity file explorer and can be edited directly from your blank Unity project.</li>
-<li>Remember to update the <code>package.json</code> file based on your project.</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md2"></a>
-Documentation Generation</h1>
-<p >To enable documentation generation, you must enable read and write permissions for GitHub actions:</p>
-<ol type="1">
-<li>From the repository, go to <code>Settings</code>.</li>
-<li>Go to the <code>Actions (General)</code> settings.</li>
-<li>Under <code>Workflow permissions</code>, select <code>Read and write permissions</code> and save the settings.</li>
-</ol>
-<p >Once the documentation generation action has been run once, you must deploy the generated <code>gh-pages</code> branch.</p>
-<ol type="1">
-<li>From the repository, got to <code>Settings</code>.</li>
-<li>Go to the <code>Pages</code> settings.</li>
-<li>Under <code>Build and deployment</code>, select the <code>gh-pages</code> branch root and save the settings.</li>
-</ol>
-<p >By default, the documentation is generated from files contained in a <code>Scripts</code> directory. </p>
-</div></div><!-- PageDoc -->
+Installation</h1>
+<p >To add the package to a project, in Unity, select <code>Window &gt; Package Manager</code>.</p>
+<p ><img src="https://user-images.githubusercontent.com/23442063/163601100-191d8699-f4fd-42cc-96d4-f6aa5a8ae29b.png" alt="Unity Package Manager" class="inline"/></p>
+<p >Select <code>Add package from git URL...</code> and paste the following URL:</p>
+<div class="fragment"><div class="line">https://github.com/mpewsey/ObjectPool.git</div>
+</div><!-- fragment --><p >RECOMMENDED: To lock into a specific version, append <code>#{VERSION_TAG}</code> to the end of the URL. For example:</p>
+<div class="fragment"><div class="line">https://github.com/mpewsey/ObjectPool.git#v1.0.0</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md2"></a>
+Example Usage</h1>
+<div class="fragment"><div class="line">{ObjectPoolExample.cs} </div>
+<div class="line">public class ObjectPoolExample : MonoBehaviour</div>
+<div class="line">{</div>
+<div class="line">    public AssetReferenceGameObject prefab;</div>
+<div class="line">    private AddressableObjectPoolHandle PoolHandle { get; set; }</div>
+<div class="line">    private List&lt;GameObject&gt; GameObjects { get; } = new List&lt;GameObject&gt;();</div>
+<div class="line"> </div>
+<div class="line">    private void Awake()</div>
+<div class="line">    {</div>
+<div class="line">        // Cache a pool handle. This handle can perform checkout and return operations</div>
+<div class="line">        // on any existing pools for the specified prefab and will create a pool for</div>
+<div class="line">        // the prefab if one doesn&#39;t already exist.</div>
+<div class="line">        PoolHandle = AddressableObjectPool.GetPoolHandle(prefab);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    private void CheckoutObjects()</div>
+<div class="line">    {</div>
+<div class="line">        // Checks out some objects from the object pool.</div>
+<div class="line">        for (int i = 0; i &lt; 10; i++)</div>
+<div class="line">        {</div>
+<div class="line">            var obj = PoolHandle.GetObject(transform);</div>
+<div class="line">            GameObjects.Add(obj);</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    private void ReturnObjects()</div>
+<div class="line">    {</div>
+<div class="line">        // Returns any objects stored in the GameObjects list.</div>
+<div class="line">        foreach (var obj in GameObjects)</div>
+<div class="line">        {</div>
+<div class="line">            PoolHandle.ReturnObject(obj);</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        GameObjects.Clear();</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment --> </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
