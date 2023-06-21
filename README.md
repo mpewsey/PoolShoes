@@ -1,26 +1,61 @@
-# Unity Package Template
+# Object Pool
 
-A repository template for Unity packages.
+An object pool for addressable objects in Unity.
 
-## Setup
+## Installation
 
-* Fork this repository and use it as a template when creating a new repository.
-* Create a blank Unity project, then clone your repository under its `Packages` directory.
-* The package will display under `Packages` in the Unity file explorer and can be edited directly from your blank Unity project.
-* Remember to update the `package.json` file based on your project.
+To add the package to a project, in Unity, select `Window > Package Manager`.
 
-## Documentation Generation
+![Unity Package Manager](https://user-images.githubusercontent.com/23442063/163601100-191d8699-f4fd-42cc-96d4-f6aa5a8ae29b.png)
 
-To enable documentation generation, you must enable read and write permissions for GitHub actions:
+Select `Add package from git URL...` and paste the following URL:
 
-1. From the repository, go to `Settings`.
-2. Go to the `Actions (General)` settings.
-3. Under `Workflow permissions`, select `Read and write permissions` and save the settings.
+```
+https://github.com/mpewsey/ObjectPool.git
+```
 
-Once the documentation generation action has been run once, you must deploy the generated `gh-pages` branch.
+RECOMMENDED: To lock into a specific version, append `#{VERSION_TAG}` to the end of the URL. For example:
 
-1. From the repository, got to `Settings`.
-2. Go to the `Pages` settings.
-3. Under `Build and deployment`, select the `gh-pages` branch root and save the settings.
+```
+https://github.com/mpewsey/ObjectPool.git#v1.0.0
+```
 
-By default, the documentation is generated from files contained in a `Scripts` directory.
+## Example Usage
+
+```ObjectPoolExample.cs
+public class ObjectPoolExample : MonoBehaviour
+{
+    public AssetReferenceGameObject prefab;
+    private AddressableObjectPoolHandle PoolHandle { get; set; }
+    private List<GameObject> GameObjects { get; } = new List<GameObject>();
+
+    private void Awake()
+    {
+        // Cache a pool handle. This handle can perform checkout and return operations
+        // on any existing pools for the specified prefab and will create a pool for
+        // the prefab if one doesn't already exist.
+        PoolHandle = AddressableObjectPool.GetPoolHandle(prefab);
+    }
+
+    private void CheckoutObjects()
+    {
+        // Checks out some objects from the object pool.
+        for (int i = 0; i < 10; i++)
+        {
+            var obj = PoolHandle.GetObject(transform);
+            GameObjects.Add(obj);
+        }
+    }
+
+    private void ReturnObjects()
+    {
+        // Returns any objects stored in the GameObjects list.
+        foreach (var obj in GameObjects)
+        {
+            PoolHandle.ReturnObject(obj);
+        }
+
+        GameObjects.Clear();
+    }
+}
+```
