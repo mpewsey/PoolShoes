@@ -1,0 +1,12 @@
+{
+  "name": "com.companyname.packagename",
+  "author": "Author Name",
+  "displayName": "Package Name",
+  "version": "0.0.1",
+  "unity": "2021.2",
+  "keywords": [],
+  "description": "A repository template for Unity packages.",
+  "dependencies": {},
+  "samples": [],
+  "type": "library"
+}
