@@ -127,7 +127,7 @@ Example Usage</h1>
 <div class="line"> </div>
 <div class="line">    private void CheckoutObjects()</div>
 <div class="line">    {</div>
-<div class="line">        // Checks out some objects from the object pool.</div>
+<div class="line">        // Check out some objects from the object pool.</div>
 <div class="line">        for (int i = 0; i &lt; 10; i++)</div>
 <div class="line">        {</div>
 <div class="line">            var obj = PoolHandle.GetObject(transform);</div>
@@ -137,7 +137,7 @@ Example Usage</h1>
 <div class="line"> </div>
 <div class="line">    private void ReturnObjects()</div>
 <div class="line">    {</div>
-<div class="line">        // Returns any objects stored in the GameObjects list.</div>
+<div class="line">        // Return any objects stored in the GameObjects list.</div>
 <div class="line">        foreach (var obj in GameObjects)</div>
 <div class="line">        {</div>
 <div class="line">            PoolHandle.ReturnObject(obj);</div>
