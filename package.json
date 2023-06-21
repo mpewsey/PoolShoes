@@ -1,12 +1,14 @@
 {
-  "name": "com.companyname.packagename",
-  "author": "Author Name",
-  "displayName": "Package Name",
+  "name": "com.mpewsey.objectpool",
+  "author": "Matt Pewsey",
+  "displayName": "Object Pool",
   "version": "0.0.1",
   "unity": "2021.2",
   "keywords": [],
-  "description": "A repository template for Unity packages.",
-  "dependencies": {},
+  "description": "An object pool for addressable objects in Unity.",
+  "dependencies": {
+    "com.unity.addressables": "1.19.19"
+  },
   "samples": [],
   "type": "library"
 }
