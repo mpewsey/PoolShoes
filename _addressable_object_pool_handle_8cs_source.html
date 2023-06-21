@@ -142,8 +142,13 @@ $(document).ready(function(){initNavTree('_addressable_object_pool_handle_8cs_so
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            Object.Destroy(obj);</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        }</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>}</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> IsValid()</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="keywordflow">return</span> Pools != <span class="keyword">null</span> &amp;&amp; Prefab != <span class="keyword">null</span> &amp;&amp; Prefab.RuntimeKeyIsValid();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}</div>
 <div class="ttc" id="aclass_m_pewsey_1_1_object_pool_1_1_addressable_object_pool_html"><div class="ttname"><a href="class_m_pewsey_1_1_object_pool_1_1_addressable_object_pool.html">MPewsey.ObjectPool.AddressableObjectPool</a></div><div class="ttdef"><b>Definition:</b> <a href="_addressable_object_pool_8cs_source.html#l00008">AddressableObjectPool.cs:9</a></div></div>
 <div class="ttc" id="anamespace_m_pewsey_1_1_object_pool_html"><div class="ttname"><a href="namespace_m_pewsey_1_1_object_pool.html">MPewsey.ObjectPool</a></div><div class="ttdef"><b>Definition:</b> <a href="_addressable_object_pool_8cs_source.html#l00006">AddressableObjectPool.cs:7</a></div></div>
 <div class="ttc" id="astruct_m_pewsey_1_1_object_pool_1_1_addressable_object_pool_handle_html"><div class="ttname"><a href="struct_m_pewsey_1_1_object_pool_1_1_addressable_object_pool_handle.html">MPewsey.ObjectPool.AddressableObjectPoolHandle</a></div><div class="ttdef"><b>Definition:</b> <a href="_addressable_object_pool_handle_8cs_source.html#l00007">AddressableObjectPoolHandle.cs:8</a></div></div>
