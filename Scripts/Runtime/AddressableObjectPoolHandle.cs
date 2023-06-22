@@ -15,20 +15,22 @@ namespace MPewsey.ObjectPool
             Pools = pools;
         }
 
-        public GameObject GetObject(Transform parent)
+        public AddressableObjectPool GetPool()
         {
             if (Pools.Count > 0)
-                return Pools[0].GetObject(parent);
+                return Pools[0];
 
-            return AddressableObjectPool.Create(Prefab).GetObject(parent);
+            return AddressableObjectPool.Create(Prefab);
         }
 
-        public T GetObject<T>(Transform parent)
+        public GameObject GetObject(Transform parent = null)
         {
-            if (Pools.Count > 0)
-                return Pools[0].GetObject<T>(parent);
+            return GetPool().GetObject(parent);
+        }
 
-            return AddressableObjectPool.Create(Prefab).GetObject<T>(parent);
+        public T GetObject<T>(Transform parent = null)
+        {
+            return GetPool().GetObject<T>(parent);
         }
 
         public void ReturnObject(GameObject obj)

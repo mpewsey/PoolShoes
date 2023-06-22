@@ -39,6 +39,14 @@ namespace MPewsey.ObjectPool
             return Pool.Count;
         }
 
+        public void Clear()
+        {
+            while (Pool.Count > 0)
+            {
+                Destroy(Pool.Pop());
+            }
+        }
+
         private void ReleaseHandle()
         {
             if (Handle.IsValid())
@@ -91,7 +99,7 @@ namespace MPewsey.ObjectPool
                 pools.Remove(this);
         }
 
-        public GameObject GetObject(Transform parent)
+        public GameObject GetObject(Transform parent = null)
         {
             if (Pool.Count > 0)
             {
@@ -105,7 +113,7 @@ namespace MPewsey.ObjectPool
             return Instantiate(prefab, parent);
         }
 
-        public T GetObject<T>(Transform parent)
+        public T GetObject<T>(Transform parent = null)
         {
             return GetObject(parent).GetComponent<T>();
         }
