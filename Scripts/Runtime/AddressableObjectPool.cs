@@ -9,24 +9,9 @@ namespace MPewsey.ObjectPool
     {
         private static Dictionary<object, List<AddressableObjectPool>> Pools { get; } = new Dictionary<object, List<AddressableObjectPool>>();
 
-        [SerializeField] private int _initialCapacity;
-        [SerializeField] private AssetReferenceGameObject _prefab;
-
+        private AssetReferenceGameObject Prefab { get; set; }
         private AsyncOperationHandle<GameObject> Handle { get; set; }
         private Stack<GameObject> Pool { get; } = new Stack<GameObject>();
-        public int InitialCapacity { get => _initialCapacity; set => _initialCapacity = Mathf.Max(value, 0); }
-        public AssetReferenceGameObject Prefab { get => _prefab; private set => _prefab = value; }
-
-        private void OnValidate()
-        {
-            InitialCapacity = InitialCapacity;
-        }
-
-        private void Awake()
-        {
-            RegisterPool();
-            InitializePool();
-        }
 
         private void OnDestroy()
         {
@@ -34,9 +19,12 @@ namespace MPewsey.ObjectPool
             ReleaseHandle();
         }
 
-        public int Count()
+        private void Initialize(AssetReferenceGameObject prefab)
         {
-            return Pool.Count;
+            Prefab = prefab;
+            Handle = prefab.LoadAssetAsync();
+            RegisterPool();
+            DontDestroyOnLoad(gameObject);
         }
 
         public void Clear()
@@ -45,6 +33,35 @@ namespace MPewsey.ObjectPool
             {
                 Destroy(Pool.Pop());
             }
+        }
+
+        public void SetCapacity(int capacity)
+        {
+            if (Handle.IsDone)
+            {
+                var prefab = Handle.Result;
+
+                while (Pool.Count < capacity)
+                {
+                    var obj = Instantiate(prefab, transform);
+                    obj.SetActive(false);
+                    Pool.Push(obj);
+                }
+
+                return;
+            }
+
+            Handle.Completed += handle =>
+            {
+                var prefab = handle.Result;
+
+                while (Pool.Count < capacity)
+                {
+                    var obj = Instantiate(prefab, transform);
+                    obj.SetActive(false);
+                    Pool.Push(obj);
+                }
+            };
         }
 
         private void ReleaseHandle()
@@ -56,27 +73,6 @@ namespace MPewsey.ObjectPool
             }
         }
 
-        private void InitializePool()
-        {
-            if (Prefab.RuntimeKeyIsValid())
-            {
-                Handle = Prefab.LoadAssetAsync<GameObject>();
-                Handle.Completed += OnLoadComplete;
-            }
-        }
-
-        private void OnLoadComplete(AsyncOperationHandle<GameObject> handle)
-        {
-            var prefab = handle.Result;
-
-            while (Pool.Count < InitialCapacity)
-            {
-                var obj = Instantiate(prefab, transform);
-                obj.SetActive(false);
-                Pool.Push(obj);
-            }
-        }
-
         private void RegisterPool()
         {
             if (Prefab.RuntimeKeyIsValid())
@@ -85,7 +81,7 @@ namespace MPewsey.ObjectPool
 
                 if (!Pools.TryGetValue(key, out var pools))
                 {
-                    pools = new List<AddressableObjectPool>();
+                    pools = new List<AddressableObjectPool>(1);
                     Pools.Add(key, pools);
                 }
 
@@ -125,34 +121,32 @@ namespace MPewsey.ObjectPool
             Pool.Push(obj);
         }
 
-        public static AddressableObjectPoolHandle GetPoolHandle(AssetReferenceGameObject prefab)
+        private static void AssertPrefabIsValid(AssetReferenceGameObject prefab)
         {
             if (!prefab.RuntimeKeyIsValid())
                 throw new System.ArgumentException($"Prefab runtime key is not valid: {prefab}.");
+        }
 
+        public static AddressableObjectPoolHandle GetPoolHandle(AssetReferenceGameObject prefab)
+        {
+            AssertPrefabIsValid(prefab);
             var key = prefab.RuntimeKey;
 
             if (!Pools.TryGetValue(key, out var pools))
             {
-                pools = new List<AddressableObjectPool>();
+                pools = new List<AddressableObjectPool>(1);
                 Pools.Add(key, pools);
             }
 
             return new AddressableObjectPoolHandle(prefab, pools);
         }
 
-        public static AddressableObjectPool Create(AssetReferenceGameObject prefab, int initialCapacity = 0)
+        public static AddressableObjectPool Create(AssetReferenceGameObject prefab)
         {
-            if (!prefab.RuntimeKeyIsValid())
-                throw new System.ArgumentException($"Prefab runtime key is not valid: {prefab}.");
-
+            AssertPrefabIsValid(prefab);
             var obj = new GameObject("Addressable Object Pool");
-            obj.SetActive(false);
-            DontDestroyOnLoad(obj);
             var pool = obj.AddComponent<AddressableObjectPool>();
-            pool.InitialCapacity = initialCapacity;
-            pool.Prefab = prefab;
-            obj.SetActive(true);
+            pool.Initialize(prefab);
             return pool;
         }
     }

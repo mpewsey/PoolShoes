@@ -23,6 +23,11 @@ namespace MPewsey.ObjectPool
             return AddressableObjectPool.Create(Prefab);
         }
 
+        public void SetCapacity(int capacity)
+        {
+            GetPool().SetCapacity(capacity);
+        }
+
         public GameObject GetObject(Transform parent = null)
         {
             return GetPool().GetObject(parent);
