@@ -117,14 +117,14 @@ Inheritance diagram for MPewsey.ObjectPool.AddressableObjectPool:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af8ded2ed1120544d709a3ce4f69a7ded"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_pewsey_1_1_object_pool_1_1_addressable_object_pool.html#af8ded2ed1120544d709a3ce4f69a7ded">Clear</a> ()</td></tr>
 <tr class="separator:af8ded2ed1120544d709a3ce4f69a7ded"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a519e8f6013f5140ce1f2d162575ae639"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_pewsey_1_1_object_pool_1_1_addressable_object_pool.html#a519e8f6013f5140ce1f2d162575ae639">EnsureCapacity</a> (int capacity)</td></tr>
+<tr class="separator:a519e8f6013f5140ce1f2d162575ae639"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d1918c2bb6486b8542ab1b83c325746"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_pewsey_1_1_object_pool_1_1_addressable_object_pool.html#a0d1918c2bb6486b8542ab1b83c325746">GetObject</a> (Transform parent=null)</td></tr>
 <tr class="separator:a0d1918c2bb6486b8542ab1b83c325746"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6cfd97676618f94d73383a648a59145"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_pewsey_1_1_object_pool_1_1_addressable_object_pool.html#ae6cfd97676618f94d73383a648a59145">GetObject&lt; T &gt;</a> (Transform parent=null)</td></tr>
 <tr class="separator:ae6cfd97676618f94d73383a648a59145"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc2b3f0377a8949ea2f16309ebc2bd6d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_pewsey_1_1_object_pool_1_1_addressable_object_pool.html#afc2b3f0377a8949ea2f16309ebc2bd6d">ReturnObject</a> (GameObject obj)</td></tr>
 <tr class="separator:afc2b3f0377a8949ea2f16309ebc2bd6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac229642ab3a2cd5bf6ba3b9e2db0f468"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_pewsey_1_1_object_pool_1_1_addressable_object_pool.html#ac229642ab3a2cd5bf6ba3b9e2db0f468">SetCapacity</a> (int capacity)</td></tr>
-<tr class="separator:ac229642ab3a2cd5bf6ba3b9e2db0f468"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -238,6 +238,26 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_addressable_object_pool_8cs_source.html#l00144">144</a> of file <a class="el" href="_addressable_object_pool_8cs_source.html">AddressableObjectPool.cs</a>.</p>
+
+</div>
+</div>
+<a id="a519e8f6013f5140ce1f2d162575ae639" name="a519e8f6013f5140ce1f2d162575ae639"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a519e8f6013f5140ce1f2d162575ae639">&#9670;&nbsp;</a></span>EnsureCapacity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MPewsey.ObjectPool.AddressableObjectPool.EnsureCapacity </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>capacity</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_addressable_object_pool_8cs_source.html#l00038">38</a> of file <a class="el" href="_addressable_object_pool_8cs_source.html">AddressableObjectPool.cs</a>.</p>
 
 </div>
 </div>
@@ -435,26 +455,6 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_addressable_object_pool_8cs_source.html#l00117">117</a> of file <a class="el" href="_addressable_object_pool_8cs_source.html">AddressableObjectPool.cs</a>.</p>
-
-</div>
-</div>
-<a id="ac229642ab3a2cd5bf6ba3b9e2db0f468" name="ac229642ab3a2cd5bf6ba3b9e2db0f468"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac229642ab3a2cd5bf6ba3b9e2db0f468">&#9670;&nbsp;</a></span>SetCapacity()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MPewsey.ObjectPool.AddressableObjectPool.SetCapacity </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>capacity</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_addressable_object_pool_8cs_source.html#l00038">38</a> of file <a class="el" href="_addressable_object_pool_8cs_source.html">AddressableObjectPool.cs</a>.</p>
 
 </div>
 </div>

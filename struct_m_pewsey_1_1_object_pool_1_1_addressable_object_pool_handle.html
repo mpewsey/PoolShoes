@@ -108,6 +108,8 @@ $(document).ready(function(){initNavTree('struct_m_pewsey_1_1_object_pool_1_1_ad
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2225ae5fcfa3ba28faf4a5c262ff7a01"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_m_pewsey_1_1_object_pool_1_1_addressable_object_pool_handle.html#a2225ae5fcfa3ba28faf4a5c262ff7a01">AddressableObjectPoolHandle</a> (AssetReferenceGameObject prefab, List&lt; <a class="el" href="class_m_pewsey_1_1_object_pool_1_1_addressable_object_pool.html">AddressableObjectPool</a> &gt; pools)</td></tr>
 <tr class="separator:a2225ae5fcfa3ba28faf4a5c262ff7a01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31018d7076436d5ddbabf34fa4f2895c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_m_pewsey_1_1_object_pool_1_1_addressable_object_pool_handle.html#a31018d7076436d5ddbabf34fa4f2895c">EnsureCapacity</a> (int capacity)</td></tr>
+<tr class="separator:a31018d7076436d5ddbabf34fa4f2895c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98888076b51fc59e04f87d71b7916926"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_m_pewsey_1_1_object_pool_1_1_addressable_object_pool_handle.html#a98888076b51fc59e04f87d71b7916926">GetObject</a> (Transform parent=null)</td></tr>
 <tr class="separator:a98888076b51fc59e04f87d71b7916926"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ef4826f42f40d4216a9bfdaefb8fc6b"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_m_pewsey_1_1_object_pool_1_1_addressable_object_pool_handle.html#a5ef4826f42f40d4216a9bfdaefb8fc6b">GetObject&lt; T &gt;</a> (Transform parent=null)</td></tr>
@@ -118,8 +120,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a0d73cfcf93d4e716e395b83c7f0f79df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a871fdaf6895d292a495a6fb99a30ff58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_m_pewsey_1_1_object_pool_1_1_addressable_object_pool_handle.html#a871fdaf6895d292a495a6fb99a30ff58">ReturnObject</a> (GameObject obj)</td></tr>
 <tr class="separator:a871fdaf6895d292a495a6fb99a30ff58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51d09b907d94139cb933d85d7c93cdd1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_m_pewsey_1_1_object_pool_1_1_addressable_object_pool_handle.html#a51d09b907d94139cb933d85d7c93cdd1">SetCapacity</a> (int capacity)</td></tr>
-<tr class="separator:a51d09b907d94139cb933d85d7c93cdd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
@@ -163,6 +163,26 @@ Properties</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a31018d7076436d5ddbabf34fa4f2895c" name="a31018d7076436d5ddbabf34fa4f2895c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31018d7076436d5ddbabf34fa4f2895c">&#9670;&nbsp;</a></span>EnsureCapacity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MPewsey.ObjectPool.AddressableObjectPoolHandle.EnsureCapacity </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>capacity</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_addressable_object_pool_handle_8cs_source.html#l00026">26</a> of file <a class="el" href="_addressable_object_pool_handle_8cs_source.html">AddressableObjectPoolHandle.cs</a>.</p>
+
+</div>
+</div>
 <a id="a98888076b51fc59e04f87d71b7916926" name="a98888076b51fc59e04f87d71b7916926"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a98888076b51fc59e04f87d71b7916926">&#9670;&nbsp;</a></span>GetObject()</h2>
 
@@ -258,26 +278,6 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_addressable_object_pool_handle_8cs_source.html#l00041">41</a> of file <a class="el" href="_addressable_object_pool_handle_8cs_source.html">AddressableObjectPoolHandle.cs</a>.</p>
-
-</div>
-</div>
-<a id="a51d09b907d94139cb933d85d7c93cdd1" name="a51d09b907d94139cb933d85d7c93cdd1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51d09b907d94139cb933d85d7c93cdd1">&#9670;&nbsp;</a></span>SetCapacity()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MPewsey.ObjectPool.AddressableObjectPoolHandle.SetCapacity </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>capacity</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_addressable_object_pool_handle_8cs_source.html#l00026">26</a> of file <a class="el" href="_addressable_object_pool_handle_8cs_source.html">AddressableObjectPoolHandle.cs</a>.</p>
 
 </div>
 </div>
