@@ -35,7 +35,7 @@ namespace MPewsey.ObjectPool
             }
         }
 
-        public void SetCapacity(int capacity)
+        public void EnsureCapacity(int capacity)
         {
             if (Handle.IsDone)
             {
@@ -81,7 +81,7 @@ namespace MPewsey.ObjectPool
 
                 if (!Pools.TryGetValue(key, out var pools))
                 {
-                    pools = new List<AddressableObjectPool>(1);
+                    pools = new List<AddressableObjectPool>();
                     Pools.Add(key, pools);
                 }
 
@@ -134,7 +134,7 @@ namespace MPewsey.ObjectPool
 
             if (!Pools.TryGetValue(key, out var pools))
             {
-                pools = new List<AddressableObjectPool>(1);
+                pools = new List<AddressableObjectPool>();
                 Pools.Add(key, pools);
             }
 

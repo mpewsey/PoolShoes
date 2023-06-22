@@ -23,9 +23,9 @@ namespace MPewsey.ObjectPool
             return AddressableObjectPool.Create(Prefab);
         }
 
-        public void SetCapacity(int capacity)
+        public void EnsureCapacity(int capacity)
         {
-            GetPool().SetCapacity(capacity);
+            GetPool().EnsureCapacity(capacity);
         }
 
         public GameObject GetObject(Transform parent = null)
