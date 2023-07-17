@@ -26,7 +26,7 @@ https://github.com/mpewsey/ObjectPool.git#v1.0.0
 public class ObjectPoolExample : MonoBehaviour
 {
     public AssetReferenceGameObject prefab;
-    private AddressableObjectPoolHandle PoolHandle { get; set; }
+    private AddressablePoolHandle PoolHandle { get; set; }
     private List<GameObject> GameObjects { get; } = new List<GameObject>();
 
     private void Awake()
@@ -34,7 +34,7 @@ public class ObjectPoolExample : MonoBehaviour
         // Cache a pool handle. This handle can perform checkout and return operations
         // on any existing pools for the specified prefab and will create a pool for
         // the prefab if one doesn't already exist.
-        PoolHandle = AddressableObjectPool.GetPoolHandle(prefab);
+        PoolHandle = AddressablePool.GetPoolHandle(prefab);
     }
 
     private void CheckoutObjects()
