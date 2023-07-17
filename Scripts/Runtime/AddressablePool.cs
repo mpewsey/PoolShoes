@@ -5,9 +5,9 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace MPewsey.ObjectPool
 {
-    public class AddressableObjectPool : MonoBehaviour
+    public class AddressablePool : MonoBehaviour
     {
-        private static Dictionary<object, List<AddressableObjectPool>> Pools { get; } = new Dictionary<object, List<AddressableObjectPool>>();
+        private static Dictionary<object, List<AddressablePool>> Pools { get; } = new Dictionary<object, List<AddressablePool>>();
 
         private AssetReferenceGameObject Prefab { get; set; }
         private AsyncOperationHandle<GameObject> Handle { get; set; }
@@ -81,7 +81,7 @@ namespace MPewsey.ObjectPool
 
                 if (!Pools.TryGetValue(key, out var pools))
                 {
-                    pools = new List<AddressableObjectPool>();
+                    pools = new List<AddressablePool>();
                     Pools.Add(key, pools);
                 }
 
@@ -127,25 +127,25 @@ namespace MPewsey.ObjectPool
                 throw new System.ArgumentException($"Prefab runtime key is not valid: {prefab}.");
         }
 
-        public static AddressableObjectPoolHandle GetPoolHandle(AssetReferenceGameObject prefab)
+        public static AddressablePoolHandle GetPoolHandle(AssetReferenceGameObject prefab)
         {
             AssertPrefabIsValid(prefab);
             var key = prefab.RuntimeKey;
 
             if (!Pools.TryGetValue(key, out var pools))
             {
-                pools = new List<AddressableObjectPool>();
+                pools = new List<AddressablePool>();
                 Pools.Add(key, pools);
             }
 
-            return new AddressableObjectPoolHandle(prefab, pools);
+            return new AddressablePoolHandle(prefab, pools);
         }
 
-        public static AddressableObjectPool Create(AssetReferenceGameObject prefab)
+        public static AddressablePool Create(AssetReferenceGameObject prefab)
         {
             AssertPrefabIsValid(prefab);
             var obj = new GameObject("Addressable Object Pool");
-            var pool = obj.AddComponent<AddressableObjectPool>();
+            var pool = obj.AddComponent<AddressablePool>();
             pool.Initialize(prefab);
             return pool;
         }

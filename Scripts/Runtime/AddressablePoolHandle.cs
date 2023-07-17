@@ -4,23 +4,23 @@ using UnityEngine.AddressableAssets;
 
 namespace MPewsey.ObjectPool
 {
-    public struct AddressableObjectPoolHandle
+    public struct AddressablePoolHandle
     {
         private AssetReferenceGameObject Prefab { get; }
-        private List<AddressableObjectPool> Pools { get; }
+        private List<AddressablePool> Pools { get; }
 
-        public AddressableObjectPoolHandle(AssetReferenceGameObject prefab, List<AddressableObjectPool> pools)
+        public AddressablePoolHandle(AssetReferenceGameObject prefab, List<AddressablePool> pools)
         {
             Prefab = prefab;
             Pools = pools;
         }
 
-        public AddressableObjectPool GetPool()
+        public AddressablePool GetPool()
         {
             if (Pools.Count > 0)
                 return Pools[0];
 
-            return AddressableObjectPool.Create(Prefab);
+            return AddressablePool.Create(Prefab);
         }
 
         public void EnsureCapacity(int capacity)
