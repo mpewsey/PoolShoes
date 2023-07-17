@@ -1,13 +1,13 @@
 var NAVTREEINDEX0 =
 {
-"_addressable_object_pool_8cs_source.html":[4,0,0,0,0],
-"_addressable_object_pool_handle_8cs_source.html":[4,0,0,0,1],
-"_addressable_object_pool_handle_component_8cs_source.html":[4,0,0,0,2],
+"_addressable_pool_8cs_source.html":[4,0,0,0,0],
+"_addressable_pool_handle_8cs_source.html":[4,0,0,0,1],
+"_addressable_pool_handler_8cs_source.html":[4,0,0,0,2],
 "annotated.html":[3,0],
-"class_m_pewsey_1_1_object_pool_1_1_addressable_object_pool.html":[3,0,0,0,0],
-"class_m_pewsey_1_1_object_pool_1_1_addressable_object_pool.html":[2,0,0,0,0],
-"class_m_pewsey_1_1_object_pool_1_1_addressable_object_pool_handle_component.html":[2,0,0,0,2],
-"class_m_pewsey_1_1_object_pool_1_1_addressable_object_pool_handle_component.html":[3,0,0,0,2],
+"class_m_pewsey_1_1_object_pool_1_1_addressable_pool.html":[3,0,0,0,0],
+"class_m_pewsey_1_1_object_pool_1_1_addressable_pool.html":[2,0,0,0,0],
+"class_m_pewsey_1_1_object_pool_1_1_addressable_pool_handler.html":[2,0,0,0,2],
+"class_m_pewsey_1_1_object_pool_1_1_addressable_pool_handler.html":[3,0,0,0,2],
 "classes.html":[3,1],
 "dir_4edcbb236dfd51dd81727243a38df6a0.html":[4,0,0],
 "dir_bd02518d4f499cf99d7b393e1af10b35.html":[4,0,0,0],
@@ -20,6 +20,6 @@ var NAVTREEINDEX0 =
 "namespace_m_pewsey_1_1_object_pool.html":[2,0,0,0],
 "namespaces.html":[2,0],
 "pages.html":[],
-"struct_m_pewsey_1_1_object_pool_1_1_addressable_object_pool_handle.html":[2,0,0,0,1],
-"struct_m_pewsey_1_1_object_pool_1_1_addressable_object_pool_handle.html":[3,0,0,0,1]
+"struct_m_pewsey_1_1_object_pool_1_1_addressable_pool_handle.html":[2,0,0,0,1],
+"struct_m_pewsey_1_1_object_pool_1_1_addressable_pool_handle.html":[3,0,0,0,1]
 };

@@ -43,7 +43,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_addressable_object_pool_8cs_source.html"
+"_addressable_pool_8cs_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
