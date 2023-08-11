@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "Object Pool", "index.html", [
+  [ "Poolbearer", "index.html", [
     [ "Installation", "index.html#autotoc_md1", null ],
     [ "Example Usage", "index.html#autotoc_md2", null ],
     [ "Packages", "namespaces.html", [

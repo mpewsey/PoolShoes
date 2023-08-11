@@ -11,7 +11,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Object Pool: /github/workspace/Scripts/Runtime/AddressablePoolHandle.cs Source File</title>
+<title>Poolbearer: /github/workspace/Scripts/Runtime/AddressablePoolHandle.cs Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -38,7 +38,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="Icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Object Pool
+   <div id="projectname">Poolbearer
    </div>
    <div id="projectbrief">An object pool for addressable objects in Unity.</div>
   </td>
@@ -103,25 +103,25 @@ $(document).ready(function(){initNavTree('_addressable_pool_handle_8cs_source.ht
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using</span> UnityEngine;</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using</span> UnityEngine.AddressableAssets;</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_m_pewsey_1_1_object_pool.html">MPewsey.ObjectPool</a></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_m_pewsey_1_1_poolbearer.html">MPewsey.Poolbearer</a></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_m_pewsey_1_1_object_pool_1_1_addressable_pool_handle.html">    7</a></span>    <span class="keyword">public</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_m_pewsey_1_1_object_pool_1_1_addressable_pool_handle.html">AddressablePoolHandle</a></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_m_pewsey_1_1_poolbearer_1_1_addressable_pool_handle.html">    7</a></span>    <span class="keyword">public</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_m_pewsey_1_1_poolbearer_1_1_addressable_pool_handle.html">AddressablePoolHandle</a></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    {</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        <span class="keyword">private</span> AssetReferenceGameObject Prefab { <span class="keyword">get</span>; }</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keyword">private</span> List&lt;AddressablePool&gt; Pools { <span class="keyword">get</span>; }</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keyword">public</span> <a class="code hl_struct" href="struct_m_pewsey_1_1_object_pool_1_1_addressable_pool_handle.html">AddressablePoolHandle</a>(AssetReferenceGameObject prefab, List&lt;AddressablePool&gt; pools)</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keyword">public</span> <a class="code hl_struct" href="struct_m_pewsey_1_1_poolbearer_1_1_addressable_pool_handle.html">AddressablePoolHandle</a>(AssetReferenceGameObject prefab, List&lt;AddressablePool&gt; pools)</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        {</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            Prefab = prefab;</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            Pools = pools;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        }</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keyword">public</span> <a class="code hl_class" href="class_m_pewsey_1_1_object_pool_1_1_addressable_pool.html">AddressablePool</a> GetPool()</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keyword">public</span> <a class="code hl_class" href="class_m_pewsey_1_1_poolbearer_1_1_addressable_pool.html">AddressablePool</a> GetPool()</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        {</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            <span class="keywordflow">if</span> (Pools.Count &gt; 0)</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                <span class="keywordflow">return</span> Pools[0];</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            <span class="keywordflow">return</span> <a class="code hl_class" href="class_m_pewsey_1_1_object_pool_1_1_addressable_pool.html">AddressablePool</a>.Create(Prefab);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            <span class="keywordflow">return</span> <a class="code hl_class" href="class_m_pewsey_1_1_poolbearer_1_1_addressable_pool.html">AddressablePool</a>.Create(Prefab);</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        }</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keyword">public</span> <span class="keywordtype">void</span> EnsureCapacity(<span class="keywordtype">int</span> capacity)</div>
@@ -156,9 +156,9 @@ $(document).ready(function(){initNavTree('_addressable_pool_handle_8cs_source.ht
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        }</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
-<div class="ttc" id="aclass_m_pewsey_1_1_object_pool_1_1_addressable_pool_html"><div class="ttname"><a href="class_m_pewsey_1_1_object_pool_1_1_addressable_pool.html">MPewsey.ObjectPool.AddressablePool</a></div><div class="ttdef"><b>Definition:</b> <a href="_addressable_pool_8cs_source.html#l00008">AddressablePool.cs:9</a></div></div>
-<div class="ttc" id="anamespace_m_pewsey_1_1_object_pool_html"><div class="ttname"><a href="namespace_m_pewsey_1_1_object_pool.html">MPewsey.ObjectPool</a></div><div class="ttdef"><b>Definition:</b> <a href="_addressable_pool_8cs_source.html#l00006">AddressablePool.cs:7</a></div></div>
-<div class="ttc" id="astruct_m_pewsey_1_1_object_pool_1_1_addressable_pool_handle_html"><div class="ttname"><a href="struct_m_pewsey_1_1_object_pool_1_1_addressable_pool_handle.html">MPewsey.ObjectPool.AddressablePoolHandle</a></div><div class="ttdef"><b>Definition:</b> <a href="_addressable_pool_handle_8cs_source.html#l00007">AddressablePoolHandle.cs:8</a></div></div>
+<div class="ttc" id="aclass_m_pewsey_1_1_poolbearer_1_1_addressable_pool_html"><div class="ttname"><a href="class_m_pewsey_1_1_poolbearer_1_1_addressable_pool.html">MPewsey.Poolbearer.AddressablePool</a></div><div class="ttdef"><b>Definition:</b> <a href="_addressable_pool_8cs_source.html#l00008">AddressablePool.cs:9</a></div></div>
+<div class="ttc" id="anamespace_m_pewsey_1_1_poolbearer_html"><div class="ttname"><a href="namespace_m_pewsey_1_1_poolbearer.html">MPewsey.Poolbearer</a></div><div class="ttdef"><b>Definition:</b> <a href="_addressable_pool_8cs_source.html#l00006">AddressablePool.cs:7</a></div></div>
+<div class="ttc" id="astruct_m_pewsey_1_1_poolbearer_1_1_addressable_pool_handle_html"><div class="ttname"><a href="struct_m_pewsey_1_1_poolbearer_1_1_addressable_pool_handle.html">MPewsey.Poolbearer.AddressablePoolHandle</a></div><div class="ttdef"><b>Definition:</b> <a href="_addressable_pool_handle_8cs_source.html#l00007">AddressablePoolHandle.cs:8</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
