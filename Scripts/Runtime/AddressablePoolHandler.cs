@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-namespace MPewsey.ObjectPool
+namespace MPewsey.Poolbearer
 {
     public class AddressablePoolHandler : MonoBehaviour
     {

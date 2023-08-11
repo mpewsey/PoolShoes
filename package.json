@@ -1,7 +1,7 @@
 {
-  "name": "com.mpewsey.objectpool",
+  "name": "com.mpewsey.poolbearer",
   "author": "Matt Pewsey",
-  "displayName": "Object Pool",
+  "displayName": "Poolbearer",
   "version": "0.0.1",
   "unity": "2021.2",
   "keywords": [],

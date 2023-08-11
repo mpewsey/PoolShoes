@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
-namespace MPewsey.ObjectPool
+namespace MPewsey.Poolbearer
 {
     public class AddressablePool : MonoBehaviour
     {

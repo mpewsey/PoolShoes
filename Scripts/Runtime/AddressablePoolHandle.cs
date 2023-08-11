@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-namespace MPewsey.ObjectPool
+namespace MPewsey.Poolbearer
 {
     public struct AddressablePoolHandle
     {

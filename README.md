@@ -1,4 +1,4 @@
-# Object Pool
+# Poolbearer
 
 An object pool for addressable objects in Unity.
 
@@ -11,13 +11,13 @@ To add the package to a project, in Unity, select `Window > Package Manager`.
 Select `Add package from git URL...` and paste the following URL:
 
 ```
-https://github.com/mpewsey/ObjectPool.git
+https://github.com/mpewsey/Poolbearer.git
 ```
 
 RECOMMENDED: To lock into a specific version, append `#{VERSION_TAG}` to the end of the URL. For example:
 
 ```
-https://github.com/mpewsey/ObjectPool.git#v1.0.0
+https://github.com/mpewsey/Poolbearer.git#v1.0.0
 ```
 
 ## Example Usage
