@@ -23,11 +23,6 @@ namespace MPewsey.PoolShoes
             return AddressablePool.Create(Prefab);
         }
 
-        public void EnsureCapacity(int capacity)
-        {
-            GetPool().EnsureCapacity(capacity);
-        }
-
         public GameObject GetObject(Transform parent = null)
         {
             return GetPool().GetObject(parent);

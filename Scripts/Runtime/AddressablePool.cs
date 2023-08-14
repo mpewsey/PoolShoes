@@ -35,35 +35,6 @@ namespace MPewsey.PoolShoes
             }
         }
 
-        public void EnsureCapacity(int capacity)
-        {
-            if (Handle.IsDone)
-            {
-                var prefab = Handle.Result;
-
-                while (Pool.Count < capacity)
-                {
-                    var obj = Instantiate(prefab, transform);
-                    obj.SetActive(false);
-                    Pool.Push(obj);
-                }
-
-                return;
-            }
-
-            Handle.Completed += handle =>
-            {
-                var prefab = handle.Result;
-
-                while (Pool.Count < capacity)
-                {
-                    var obj = Instantiate(prefab, transform);
-                    obj.SetActive(false);
-                    Pool.Push(obj);
-                }
-            };
-        }
-
         private void ReleaseHandle()
         {
             if (Handle.IsValid())
