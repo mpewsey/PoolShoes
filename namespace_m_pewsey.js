@@ -1,4 +1,4 @@
 var namespace_m_pewsey =
 [
-    [ "Poolbearer", "namespace_m_pewsey_1_1_poolbearer.html", "namespace_m_pewsey_1_1_poolbearer" ]
+    [ "PoolShoes", "namespace_m_pewsey_1_1_pool_shoes.html", "namespace_m_pewsey_1_1_pool_shoes" ]
 ];

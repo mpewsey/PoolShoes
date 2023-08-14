@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "Poolbearer", "index.html", [
+  [ "PoolShoes", "index.html", [
     [ "Installation", "index.html#autotoc_md1", null ],
     [ "Example Usage", "index.html#autotoc_md2", null ],
     [ "Packages", "namespaces.html", [
